@@ -52,3 +52,45 @@ int main() {
 
     return 0;
 }
+
+//Questão 28
+#include <stdio.h>
+
+int main() {
+    float total, valorPrestacao;
+    int opcao;
+
+    printf("Qual foi o total gasto na loja?\n");
+    scanf("%f", &total);
+
+    printf("\nEscolha uma forma de pagamento:\n");
+    printf("1 - À vista com 10%% de desconto\n");
+    printf("2 - Em 2 vezes (preço normal sem juros)\n");
+    printf("3 - Em 3 vezes com 10%% de juros\n");
+    printf("Digite a opção desejada: ");
+    scanf("%d", &opcao);
+
+    switch(opcao) {
+        case 1:
+            total = total * 0.9;
+            printf("\nVocê escolheu pagar à vista com desconto.\n");
+            printf("O valor final a pagar é: R$ %.2f\n", total);
+            break;
+        case 2:
+            valorPrestacao = total / 2;
+            printf("\nVocê escolheu pagar em 2 vezes.\n");
+            printf("Serão 2 parcelas de R$ %.2f\n", valorPrestacao);
+            break;
+        case 3:
+            total = total * 1.10;
+            valorPrestacao = total / 3;
+            printf("\nVocê escolheu pagar em 3 vezes com juros.\n");
+            printf("O valor total com juros é: R$ %.2f\n", total);
+            printf("Serão 3 parcelas de R$ %.2f\n", valorPrestacao);
+            break;
+        default:
+            printf("\nOpção inválida. Por favor, tente novamente.\n");
+    }
+
+    return 0;
+}
